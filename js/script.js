@@ -19,6 +19,7 @@ console.log(listCat);
 cats.forEach(function(cat){
 	console.log(cat);
 	let containerCat = document.createElement('div');
+	containerCat.ClassName = 'containerCat';
 	let catName = document.createElement('p');
 	catName.innerHTML = cat.name; 
 	let catImg = document.createElement('img');
