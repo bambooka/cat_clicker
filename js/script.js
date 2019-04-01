@@ -1,5 +1,4 @@
 
-var listCat = document.querySelectorAll('catsList');
 var cats = [
 
 {name: 'Bob', img: './img/cat_flower.jpg'},
@@ -10,25 +9,29 @@ var cats = [
 ];
 
 
-
-
-
-console.log(cats);
-console.log(listCat);
-
 cats.forEach(function(cat){
+	let count = 0;
 	console.log(cat);
 	let containerCat = document.createElement('div');
-	containerCat.ClassName = 'containerCat';
 	let catName = document.createElement('p');
-	catName.innerHTML = cat.name; 
 	let catImg = document.createElement('img');
+	let counter = document.createElement('p');
+	containerCat.ClassName = 'containerCat';
+	catName.innerHTML = cat.name; 
 	catImg.setAttribute('src', cat.img);
 	catImg.style.width = '200px';	
 
 	containerCat.appendChild(catName);
 	containerCat.appendChild(catImg);
+	containerCat.appendChild(counter);
 	document.body.appendChild(containerCat);
+
+	containerCat.addEventListener('click', function() {
+		count++;
+		counter.innerHTML = count;
+
+	}, false)
 	
 }
 )
+
