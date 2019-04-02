@@ -1,21 +1,21 @@
 
 var cats = [
 
-{name: 'Bob', img: './img/cat_flower.jpg'},
-{name: 'Marcel', img: './img/cat_roof.jpg'},
-{name: 'Puma', img: './img/cat_boquet.jpg'},
-{name: 'Sam', img: './img/cat_frog.jpg'},
-{name: 'Vasy', img: './img/cat_dreams.jpg'},
+{name: 'Bob', img: './img/cat_flower.jpg', click: 0},
+{name: 'Marcel', img: './img/cat_roof.jpg', click: 0},
+{name: 'Puma', img: './img/cat_boquet.jpg', click: 0},
+{name: 'Sam', img: './img/cat_frog.jpg', click: 0},
+{name: 'Vasy', img: './img/cat_dreams.jpg', click: 0},
 ];
 
 
 cats.forEach(function(cat){
-	let count = 0;
 	console.log(cat);
 	let containerCat = document.createElement('div');
 	let catName = document.createElement('p');
 	let catImg = document.createElement('img');
 	let counter = document.createElement('p');
+	counter.innerHTML = cat.click;
 	containerCat.ClassName = 'containerCat';
 	catName.innerHTML = cat.name; 
 	catImg.setAttribute('src', cat.img);
@@ -27,8 +27,8 @@ cats.forEach(function(cat){
 	document.body.appendChild(containerCat);
 
 	containerCat.addEventListener('click', function() {
-		count++;
-		counter.innerHTML = count;
+		cat.click++;
+		counter.innerHTML = cat.click;
 
 	}, false)
 	
